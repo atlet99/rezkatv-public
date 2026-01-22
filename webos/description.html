@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RezkaTV - Описание</title>
+    <style>
+        :root {
+            --primary-color: #e50914;
+            --bg-color: #141414;
+            --text-color: #ffffff;
+            --secondary-text: #b3b3b3;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
+        .description {
+            font-size: 1.2em;
+            margin-bottom: 1.5em;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 2em;
+        }
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+        .feature-card h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+        .footer {
+            margin-top: 3em;
+            font-size: 0.9em;
+            color: var(--secondary-text);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>RezkaTV</h1>
+        <div class="description">
+            <p>RezkaTV &mdash; это современный медиа-клиент для потокового воспроизведения контента на телевизорах LG webOS. Мы создали приложение, которое объединяет в себе простоту использования и мощный функционал для комфортного просмотра.</p>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <h3>Удобный интерфейс</h3>
+                <p>Интуитивно понятная навигация, адаптированная специально для пульта Magic Remote.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Высокое качество</h3>
+                <p>Поддержка различных форматов и разрешений видео для наилучшего опыта просмотра.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Огромная библиотека</h3>
+                <p>Доступ к огромному количеству фильмов, сериалов и мультфильмов прямо на вашем ТВ.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2026 RezkaTV Project. Разработано для LG webOS.</p>
+        </div>
+    </div>
+</body>
+</html>
