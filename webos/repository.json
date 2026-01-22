@@ -41,9 +41,9 @@
         "rootRequired": false,
         "ipkUrl": "https://github.com/atlet99/rezkatv-public/releases/download/v1.1.3/com.rezkatv.app_1.1.3_all.ipk",
         "ipkHash": {
-          "sha256": "30905f8c9beeecb91056a80ff0e656df5ace5c751af008f998994318b81f3486"
+          "sha256": "551efa6e6513828c1293d7532c98a85810972c3d9c7754943044200e80d559e1"
         },
-        "ipkSize": 2357492,
+        "ipkSize": 2357268,
         "minWebOSVersion": "4.0.0",
         "maxWebOSVersion": "99.0.0"
       },
