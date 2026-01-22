@@ -1,0 +1,48 @@
+# System Files
+.DS_Store
+Thumbs.db
+*_archive
+*_backup
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build Output
+dist/
+*.ipk
+
+# WebOS Build Artifacts
+webos/assets/
+webos/index.html
+webos/*.js
+webos/*.css
+webos/*.map
+# Keep these source files:
+!webos/package-webos.sh
+!webos/appinfo.json
+!webos/repository.json
+!webos/description.html
+!webos/icon.png
+!webos/largeIcon.png
+
+# TypeScript
+*.tsbuildinfo
+vite.config.d.ts
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Test Results
+test_results/
+coverage/
+
+# Local Env
+.env
+.env.local
+output.har
