@@ -16,7 +16,7 @@ npm run build
 
 # Step 2: Clean previous webOS build files
 echo "🧹 Step 2: Cleaning previous build..."
-rm -rf webos/dist webos/assets webos/*.html webos/*.js webos/*.css
+rm -rf webos/dist webos/assets webos/index.html webos/*.js webos/*.css
 
 # Step 3: Copy build output to webOS directory
 echo "📋 Step 3: Copying build output..."

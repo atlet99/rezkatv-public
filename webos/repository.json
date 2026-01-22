@@ -12,22 +12,34 @@
       "iconUri": "https://github.com/atlet99/rezkatv-public/raw/main/webos/largeIcon.png",
       "description": "RezkaTV - медиа-клиент для потокового воспроизведения контента на телевизорах LG webOS. Приложение предоставляет удобный интерфейс для просмотра фильмов и сериалов с поддержкой различных форматов и качеств.",
       "category": "entertainment",
-      "categories": ["entertainment", "media", "video"],
+      "categories": [
+        "entertainment",
+        "media",
+        "video"
+      ],
       "author": "RezkaTV",
       "vendor": "RezkaTV",
       "license": "MIT",
       "homepage": "https://github.com/atlet99/rezkatv-public",
-      "keywords": ["rezka", "streaming", "media", "video", "movies", "tv", "webos"],
+      "keywords": [
+        "rezka",
+        "streaming",
+        "media",
+        "video",
+        "movies",
+        "tv",
+        "webos"
+      ],
       "manifest": {
         "id": "com.rezkatv.app",
-        "version": "1.1.2",
+        "version": "1.1.3",
         "type": "web",
         "title": "RezkaTV",
         "appDescription": "Media streaming client for LG webOS TV",
         "iconUri": "https://github.com/atlet99/rezkatv-public/raw/main/webos/icon.png",
         "sourceUrl": "https://github.com/atlet99/rezkatv-public",
         "rootRequired": false,
-        "ipkUrl": "https://github.com/atlet99/rezkatv-public/releases/download/v1.1.2/com.rezkatv.app_1.1.2_all.ipk",
+        "ipkUrl": "https://github.com/atlet99/rezkatv-public/releases/download/v1.1.3/com.rezkatv.app_1.1.3_all.ipk",
         "ipkHash": {
           "sha256": "30905f8c9beeecb91056a80ff0e656df5ace5c751af008f998994318b81f3486"
         },
