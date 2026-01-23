@@ -1,30 +1,23 @@
 {
   "id": "com.rezkatv.app",
-  "version": "1.1.3",
+  "version": "1.1.11",
   "vendor": "RezkaTV",
   "type": "web",
   "main": "index.html",
-  "title": "RezkaTV UPDATED",
+  "title": "RezkaTV",
   "icon": "icon.png",
   "largeIcon": "largeIcon.png",
   "iconColor": "#e50914",
   "background": "background.png",
   "uiRevision": 2,
-  "trustLevel": "trusted",
-  "privilegedJail": true,
-  "requiredPermissions": [
-    "time.query",
-    "webBrowser",
-    "com.webos.service.keymanager"
-  ],
+  "support360Content": true,
   "vendorExtension": {
-    "userAgent": "Mozilla/5.0 (Web0S; Linux/SmartTV) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.215 Safari/537.36 WebAppManager",
+    "userAgent": "$browserName$/$browserVersion$ ($platformName$-$platformVersion$), _TV_O18/$firmwareVersion$ (LG, $modelName$, $networkMode$)",
     "allowCrossDomain": true
   },
-  "disableBackHistoryAPI": true,
-  "inspectable": true,
-  "transparency": false,
-  "support360Content": true,
+  "trustLevel": "netcast",
+  "privilegedJail": true,
   "supportQuickStart": true,
+  "disableBackHistoryAPI": true,
   "wolwowlan": true
 }
