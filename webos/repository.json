@@ -32,18 +32,18 @@
       ],
       "manifest": {
         "id": "com.rezkatv.app",
-        "version": "1.1.13",
+        "version": "1.1.14",
         "type": "web",
         "title": "RezkaTV",
         "appDescription": "Media streaming client for LG webOS TV",
         "iconUri": "https://github.com/atlet99/rezkatv-public/raw/main/webos/icon.png",
         "sourceUrl": "https://github.com/atlet99/rezkatv-public",
         "rootRequired": false,
-        "ipkUrl": "https://github.com/atlet99/rezkatv-public/releases/download/v1.1.13/com.rezkatv.app_1.1.13_all.ipk",
+        "ipkUrl": "https://github.com/atlet99/rezkatv-public/releases/download/v1.1.14/com.rezkatv.app_1.1.14_all.ipk",
         "ipkHash": {
-          "sha256": "26c2c3ecc202ad74ea7ece6973da5f5663cd8a8d5df0128b1759590736cb5da5"
+          "sha256": "c3d545d5ea52901c5dd3ab5a70cfe733e47af0204238e8cef2a62e0bcdc52785"
         },
-        "ipkSize": 6613536,
+        "ipkSize": 6599676,
         "minWebOSVersion": "3.0.0",
         "maxWebOSVersion": "99.0.0"
       },
