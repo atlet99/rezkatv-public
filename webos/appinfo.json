@@ -1,6 +1,6 @@
 {
   "id": "com.rezkatv.app",
-  "version": "1.1.12",
+  "version": "1.1.13",
   "vendor": "RezkaTV",
   "type": "web",
   "main": "index.html",
@@ -11,6 +11,7 @@
   "background": "background.png",
   "uiRevision": 2,
   "support360Content": true,
+  "checkUpdateOnLaunch": false,
   "vendorExtension": {
     "userAgent": "$browserName$/$browserVersion$ ($platformName$-$platformVersion$), _TV_O18/$firmwareVersion$ (LG, $modelName$, $networkMode$)",
     "allowCrossDomain": true
