@@ -44,27 +44,19 @@ else
   find webos -name "*.html" -type f -exec sed -i 's|<link rel="modulepreload"[^>]*>||g' {} \;
 fi
 
-# Step 5: Copy PalmServiceBridge polyfill and inject into index.html
-echo "🔧 Step 5: Adding PalmServiceBridge polyfill..."
-if [ -f "webos/palmservicebridge-polyfill.js" ]; then
-  # Copy polyfill to webos directory (it's already there, but ensure it's accessible)
-  # Now inject it into index.html before webOSTV.js
-  if [ -f "webos/index.html" ]; then
-    if [[ "$OSTYPE" == "darwin"* ]]; then
-      # macOS: Use sed with backup
-      sed -i '' '/webOSTV\.js/i\
+# Step 5: Copy PalmServiceBridge polyfill and inject into index.html (optional)
+echo "🔧 Step 5: Adding PalmServiceBridge polyfill (optional)..."
+if [ -f "webos/palmservicebridge-polyfill.js" ] && [ -f "webos/index.html" ]; then
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    # macOS: Use sed with backup
+    sed -i '' '/webOSTV\.js/i\
     <script src="./palmservicebridge-polyfill.js" charset="utf-8"></script>
 ' webos/index.html
-    else
-      # Linux: Use sed
-      sed -i '/webOSTV\.js/i\    <script src="./palmservicebridge-polyfill.js" charset="utf-8"></script>' webos/index.html
-    fi
-    echo "✅ PalmServiceBridge polyfill injected into index.html"
   else
-    echo "⚠️  Warning: webos/index.html not found, cannot inject polyfill"
+    # Linux: Use sed
+    sed -i '/webOSTV\.js/i\    <script src="./palmservicebridge-polyfill.js" charset="utf-8"></script>' webos/index.html
   fi
-else
-  echo "⚠️  Warning: webos/palmservicebridge-polyfill.js not found"
+  echo "✅ PalmServiceBridge polyfill injected into index.html"
 fi
 
 # Step 6: Generate placeholder icons if not present
