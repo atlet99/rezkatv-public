@@ -1,6 +1,6 @@
 {
   "id": "com.rezkatv.app",
-  "version": "1.1.21",
+  "version": "1.1.22",
   "vendor": "RezkaTV",
   "type": "web",
   "main": "index.html",
@@ -17,8 +17,7 @@
     "userAgent": "$browserName$/$browserVersion$ ($platformName$-$platformVersion$), _TV_O18/$firmwareVersion$ (LG, $modelName$, $networkMode$)",
     "allowCrossDomain": true
   },
-  "trustLevel": "netcast",
-  "privilegedJail": true,
+  "inspectable": true,
   "supportQuickStart": true,
   "disableBackHistoryAPI": true,
   "wolwowlan": true
