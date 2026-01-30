@@ -59,14 +59,53 @@ if [ -f "webos/palmservicebridge-polyfill.js" ] && [ -f "webos/index.html" ]; th
   echo "✅ PalmServiceBridge polyfill injected into index.html"
 fi
 
-# Step 6: Generate placeholder icons if not present
-echo "🎨 Step 6: Checking icons..."
-if [ ! -f "webos/icon.png" ]; then
-  echo "⚠️  Warning: webos/icon.png not found. Please add an 80x80 PNG icon."
+# Step 6: Validate icon formats (must be real PNG, not JPEG with .png extension)
+echo "🔍 Step 6: Validating icon formats..."
+
+validate_png() {
+  local file=$1
+  local name=$2
+  
+  if [ ! -f "$file" ]; then
+    echo "❌ ERROR: $file not found!"
+    echo "   Please add a PNG icon for $name."
+    return 1
+  fi
+  
+  format=$(file -b "$file" | head -1)
+  if [[ ! "$format" =~ "PNG image data" ]]; then
+    echo "❌ ERROR: $file is NOT a PNG file!"
+    echo "   Detected: $format"
+    echo "   Required: PNG image data with RGBA"
+    echo ""
+    echo "   To fix, convert the image to PNG:"
+    echo "   magick $file -depth 8 PNG32:$file"
+    return 1
+  fi
+  
+  # Check for RGBA (alpha channel) - optional warning
+  if [[ ! "$format" =~ "RGBA" ]] && [[ ! "$format" =~ "alpha" ]]; then
+    echo "⚠️  WARNING: $file may not have transparency (RGBA)"
+    echo "   Detected: $format"
+    echo "   Icons look better with transparent background in webOS launcher."
+  fi
+  
+  echo "✅ $name: valid PNG ($format)"
+  return 0
+}
+
+# Validate required icons
+ICONS_VALID=true
+validate_png "webos/icon.png" "icon.png (80x80)" || ICONS_VALID=false
+validate_png "webos/largeIcon.png" "largeIcon.png (130x130)" || ICONS_VALID=false
+
+if [ "$ICONS_VALID" = false ]; then
+  echo ""
+  echo "❌ Icon validation failed! Fix icons before packaging."
+  exit 1
 fi
-if [ ! -f "webos/largeIcon.png" ]; then
-  echo "⚠️  Warning: webos/largeIcon.png not found. Please add a 130x130 PNG icon."
-fi
+
+echo "✅ All icons validated successfully"
 
 # Step 7: Package for WebOS (using npx ares-package)
 echo "📦 Step 7: Creating webOS package..."

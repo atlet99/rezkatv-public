@@ -1,6 +1,6 @@
 {
   "id": "com.rezkatv.app",
-  "version": "1.1.17",
+  "version": "1.1.18",
   "vendor": "RezkaTV",
   "type": "web",
   "main": "index.html",
@@ -9,7 +9,8 @@
   "largeIcon": "largeIcon.png",
   "iconColor": "#e50914",
   "background": "background.png",
-  "uiRevision": 2,
+  "splashBackground": "splash.png",
+  "uiRevision": 3,
   "support360Content": true,
   "checkUpdateOnLaunch": false,
   "vendorExtension": {

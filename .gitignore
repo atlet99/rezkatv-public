@@ -27,6 +27,9 @@ webos/*.map
 !webos/description.html
 !webos/icon.png
 !webos/largeIcon.png
+!webos/background.png
+!webos/splash.png
+!webos/icon_master_v2.png
 
 # TypeScript
 *.tsbuildinfo
