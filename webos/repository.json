@@ -41,9 +41,9 @@
         "rootRequired": false,
         "ipkUrl": "https://github.com/atlet99/rezkatv-public/releases/download/v1.1.24/com.rezkatv.app_1.1.24_all.ipk",
         "ipkHash": {
-          "sha256": "0dec6e91dd3c422c48bdca929eb53a2ed7f05ab51ff4991b1bcb2460abc2312f"
+          "sha256": "512c3327958ea2613ba44b738a5d51ad210e8d0309ed4184de47713b04511b30"
         },
-        "ipkSize": 7260920,
+        "ipkSize": 7260948,
         "minWebOSVersion": "5.0.0",
         "maxWebOSVersion": "99.0.0"
       },
@@ -87,11 +87,11 @@
         "iconUri": "https://github.com/atlet99/rezkatv-public/raw/main/webos/icon.png",
         "sourceUrl": "https://github.com/atlet99/rezkatv-public",
         "rootRequired": false,
-        "ipkUrl": "https://github.com/atlet99/rezkatv-public/releases/download/v1.1.24/com.rezkatv.app_1.1.24_legacy.ipk",
+        "ipkUrl": "https://github.com/atlet99/rezkatv-public/releases/download/v1.1.24/com.rezkatv.app_1.1.24_all_legacy.ipk",
         "ipkHash": {
-          "sha256": "7ea771e3e01fff7ecfed09609b8a022f33b6a572997e33ca02f295c70c5d6728"
+          "sha256": "5bae84e74b3df3c2e6b8267d58279ada6cc342946f2749ddb19b8a02af2ab7c4"
         },
-        "ipkSize": 4574716,
+        "ipkSize": 4574738,
         "minWebOSVersion": "3.0.0",
         "maxWebOSVersion": "4.99.0"
       },
