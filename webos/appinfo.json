@@ -1,6 +1,6 @@
 {
   "id": "com.rezkatv.app",
-  "version": "1.1.23",
+  "version": "1.1.24",
   "vendor": "RezkaTV",
   "type": "web",
   "main": "index.html",
@@ -10,15 +10,32 @@
   "iconColor": "#e50914",
   "background": "background.png",
   "splashBackground": "splash.png",
-  "uiRevision": 3,
-  "support360Content": true,
-  "checkUpdateOnLaunch": false,
+  "splashColor": "#0a0a0a",
+  "resolution": "1920x1080",
+  "requiredMemory": 64,
+  "transparent": false,
+  "enablePigScreenSaver": false,
+  "appDescription": "Оптимизированная версия для webOS 3.x-4.x",
+  "disableBackHistoryAPI": true,
+  "handlesRelaunch": true,
+  "screenSaverProperties": {
+    "preferredType": 2
+  },
+  "supportPortraitMode": false,
+  "supportTouchMode": "virtual",
+  "virtualTouch": {
+    "verticalThreshold": 30,
+    "horizontalThreshold": 40,
+    "shortTouchThreshold": 15
+  },
+  "closeOnRotation": false,
   "vendorExtension": {
     "userAgent": "$browserName$/$browserVersion$ ($platformName$-$platformVersion$), _TV_O18/$firmwareVersion$ (LG, $modelName$, $networkMode$)",
     "allowCrossDomain": true
   },
-  "inspectable": true,
+  "trustLevel": "netcast",
+  "privilegedJail": true,
   "supportQuickStart": true,
-  "disableBackHistoryAPI": true,
-  "wolwowlan": true
+  "supportGIP": true,
+  "inspectable": true
 }

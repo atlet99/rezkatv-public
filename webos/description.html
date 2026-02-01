@@ -1,86 +1,417 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RezkaTV - Описание</title>
     <style>
-        :root {
-            --primary-color: #e50914;
-            --bg-color: #141414;
-            --text-color: #ffffff;
-            --secondary-text: #b3b3b3;
-        }
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        h1 {
-            color: var(--primary-color);
-            font-size: 2.5em;
-            margin-bottom: 0.5em;
-        }
-        .description {
-            font-size: 1.2em;
-            margin-bottom: 1.5em;
-        }
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 2em;
-        }
-        .feature-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid var(--primary-color);
-        }
-        .feature-card h3 {
-            margin-top: 0;
-            color: var(--primary-color);
-        }
-        .footer {
-            margin-top: 3em;
-            font-size: 0.9em;
-            color: var(--secondary-text);
-            text-align: center;
-        }
+      :root {
+        --primary-color: #e50914;
+        --bg-color: #141414;
+        --text-color: #ffffff;
+        --secondary-text: #b3b3b3;
+        --success-color: #30ad6b;
+        --warning-color: #ea9703;
+      }
+      body {
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+      }
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      h1 {
+        color: var(--primary-color);
+        font-size: 2.5em;
+        margin-bottom: 0.5em;
+      }
+      h2 {
+        color: var(--text-color);
+        font-size: 1.8em;
+        margin-top: 2em;
+        border-bottom: 2px solid var(--primary-color);
+        padding-bottom: 0.3em;
+      }
+      .description {
+        font-size: 1.2em;
+        margin-bottom: 1.5em;
+      }
+
+      /* Version selector */
+      .versions {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+        margin: 2em 0;
+      }
+      .version-card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        padding: 24px;
+        border: 2px solid transparent;
+        transition: border-color 0.2s;
+      }
+      .version-card:hover {
+        border-color: var(--primary-color);
+      }
+      .version-card.modern {
+        border-top: 4px solid var(--success-color);
+      }
+      .version-card.legacy {
+        border-top: 4px solid var(--warning-color);
+      }
+      .version-card h3 {
+        margin-top: 0;
+        font-size: 1.5em;
+      }
+      .version-card.modern h3 {
+        color: var(--success-color);
+      }
+      .version-card.legacy h3 {
+        color: var(--warning-color);
+      }
+      .version-badge {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.8em;
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+      .version-card.modern .version-badge {
+        background: var(--success-color);
+        color: white;
+      }
+      .version-card.legacy .version-badge {
+        background: var(--warning-color);
+        color: white;
+      }
+      .version-card ul {
+        padding-left: 20px;
+        margin: 16px 0;
+      }
+      .version-card li {
+        margin-bottom: 8px;
+      }
+      .version-card .webos-versions {
+        color: var(--secondary-text);
+        font-size: 0.95em;
+        margin-top: 16px;
+        padding: 12px;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 8px;
+      }
+      .version-card .webos-versions strong {
+        color: var(--text-color);
+      }
+
+      /* Download buttons */
+      .download-btn {
+        display: inline-block;
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1em;
+        margin-top: 16px;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      .download-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+      .version-card.modern .download-btn {
+        background: var(--success-color);
+        color: white;
+      }
+      .version-card.legacy .download-btn {
+        background: var(--warning-color);
+        color: white;
+      }
+
+      /* Features */
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-top: 2em;
+      }
+      .feature-card {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 20px;
+        border-radius: 8px;
+        border-left: 4px solid var(--primary-color);
+      }
+      .feature-card h3 {
+        margin-top: 0;
+        color: var(--primary-color);
+      }
+
+      /* Installation guide */
+      .install-steps {
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 12px;
+        padding: 24px;
+        margin: 2em 0;
+      }
+      .install-steps ol {
+        padding-left: 24px;
+      }
+      .install-steps li {
+        margin-bottom: 12px;
+      }
+      .install-steps code {
+        background: rgba(0, 0, 0, 0.4);
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-family: 'Consolas', 'Monaco', monospace;
+        color: var(--primary-color);
+      }
+
+      /* Table */
+      .comparison-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2em 0;
+      }
+      .comparison-table th,
+      .comparison-table td {
+        padding: 12px 16px;
+        text-align: left;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .comparison-table th {
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--primary-color);
+      }
+      .comparison-table .yes {
+        color: var(--success-color);
+      }
+      .comparison-table .no {
+        color: var(--secondary-text);
+      }
+
+      .footer {
+        margin-top: 3em;
+        font-size: 0.9em;
+        color: var(--secondary-text);
+        text-align: center;
+        padding-top: 2em;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .footer a {
+        color: var(--primary-color);
+        text-decoration: none;
+      }
+      .footer a:hover {
+        text-decoration: underline;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <h1>RezkaTV</h1>
-        <div class="description">
-            <p>RezkaTV &mdash; это современный медиа-клиент для потокового воспроизведения контента на телевизорах LG webOS. Мы создали приложение, которое объединяет в себе простоту использования и мощный функционал для комфортного просмотра.</p>
+      <h1>RezkaTV</h1>
+      <div class="description">
+        <p>
+          RezkaTV &mdash; это современный медиа-клиент для потокового воспроизведения контента на
+          телевизорах LG webOS. Мы создали приложение, которое объединяет в себе простоту
+          использования и мощный функционал для комфортного просмотра.
+        </p>
+      </div>
+
+      <h2>Выберите вашу версию</h2>
+      <p>У нас есть две версии приложения, оптимизированные для разных поколений телевизоров:</p>
+
+      <div class="versions">
+        <div class="version-card modern">
+          <span class="version-badge">Рекомендуется</span>
+          <h3>RezkaTV Modern</h3>
+          <p>Полнофункциональная версия на Vue 3 с современным интерфейсом.</p>
+          <ul>
+            <li>Полный функционал</li>
+            <li>Современный UI</li>
+            <li>Высокая производительность</li>
+            <li>Все озвучки и субтитры</li>
+            <li>Профиль и синхронизация</li>
+          </ul>
+          <div class="webos-versions">
+            <strong>Совместимость:</strong><br />
+            webOS 5.x - 24.x (2020-2024)<br />
+            Chrome 68+
+          </div>
+          <a
+            href="https://github.com/atlet99/rezkatv-public/releases/latest/download/com.rezkatv.app_modern.ipk"
+            class="download-btn"
+          >
+            Скачать Modern IPK
+          </a>
         </div>
 
-        <div class="features">
-            <div class="feature-card">
-                <h3>Удобный интерфейс</h3>
-                <p>Интуитивно понятная навигация, адаптированная специально для пульта Magic Remote.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Высокое качество</h3>
-                <p>Поддержка различных форматов и разрешений видео для наилучшего опыта просмотра.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Огромная библиотека</h3>
-                <p>Доступ к огромному количеству фильмов, сериалов и мультфильмов прямо на вашем ТВ.</p>
-            </div>
+        <div class="version-card legacy">
+          <span class="version-badge">Для старых ТВ</span>
+          <h3>RezkaTV Legacy</h3>
+          <p>Оптимизированная версия на Vanilla JS для старых телевизоров.</p>
+          <ul>
+            <li>Легковесная (~100KB)</li>
+            <li>Базовый функционал</li>
+            <li>Оптимизирована для слабых CPU</li>
+            <li>Минимальное потребление RAM</li>
+            <li>ES5 совместимость</li>
+          </ul>
+          <div class="webos-versions">
+            <strong>Совместимость:</strong><br />
+            webOS 3.x - 4.x (2016-2019)<br />
+            Chrome 38-53
+          </div>
+          <a
+            href="https://github.com/atlet99/rezkatv-public/releases/latest/download/com.rezkatv.app_legacy.ipk"
+            class="download-btn"
+          >
+            Скачать Legacy IPK
+          </a>
         </div>
+      </div>
 
-        <div class="footer">
-            <p>&copy; 2026 RezkaTV Project. Разработано для LG webOS.</p>
+      <h2>Сравнение версий</h2>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Функция</th>
+            <th>Modern</th>
+            <th>Legacy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Просмотр фильмов и сериалов</td>
+            <td class="yes">✓</td>
+            <td class="yes">✓</td>
+          </tr>
+          <tr>
+            <td>Выбор качества видео</td>
+            <td class="yes">✓</td>
+            <td class="yes">✓</td>
+          </tr>
+          <tr>
+            <td>Выбор озвучки</td>
+            <td class="yes">✓</td>
+            <td class="yes">✓</td>
+          </tr>
+          <tr>
+            <td>Субтитры</td>
+            <td class="yes">✓</td>
+            <td class="yes">✓</td>
+          </tr>
+          <tr>
+            <td>Поиск</td>
+            <td class="yes">✓</td>
+            <td class="yes">✓</td>
+          </tr>
+          <tr>
+            <td>Закладки</td>
+            <td class="yes">✓</td>
+            <td class="yes">✓</td>
+          </tr>
+          <tr>
+            <td>Magic Remote (pointer)</td>
+            <td class="yes">✓</td>
+            <td class="yes">✓</td>
+          </tr>
+          <tr>
+            <td>Авторизация</td>
+            <td class="yes">✓</td>
+            <td class="yes">✓</td>
+          </tr>
+          <tr>
+            <td>Продолжить просмотр</td>
+            <td class="yes">✓</td>
+            <td class="yes">✓</td>
+          </tr>
+          <tr>
+            <td>Коллекции</td>
+            <td class="yes">✓</td>
+            <td class="no">—</td>
+          </tr>
+          <tr>
+            <td>Комментарии</td>
+            <td class="yes">✓</td>
+            <td class="no">—</td>
+          </tr>
+          <tr>
+            <td>Расписание сериалов</td>
+            <td class="yes">✓</td>
+            <td class="no">—</td>
+          </tr>
+          <tr>
+            <td>Локализация (ru/en/uk)</td>
+            <td class="yes">✓</td>
+            <td class="yes">✓</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Как определить версию webOS?</h2>
+      <div class="install-steps">
+        <ol>
+          <li>Нажмите кнопку <strong>Settings</strong> на пульте</li>
+          <li>Перейдите в <strong>General</strong> → <strong>About This TV</strong></li>
+          <li>
+            Найдите строку <strong>webOS TV Version</strong>
+            <ul>
+              <li>Версия <code>3.x</code> или <code>4.x</code> → выберите <strong>Legacy</strong></li>
+              <li>Версия <code>5.x</code> и выше → выберите <strong>Modern</strong></li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+
+      <h2>Установка через Homebrew Channel</h2>
+      <div class="install-steps">
+        <ol>
+          <li>
+            Установите <a href="https://github.com/nickauto/nickauto.github.io">Homebrew Channel</a> на
+            ваш телевизор
+          </li>
+          <li>Откройте Homebrew Channel</li>
+          <li>Добавьте репозиторий: <code>https://atlet99.github.io/rezkatv-public/webos/repository.json</code></li>
+          <li>Найдите <strong>RezkaTV</strong> или <strong>RezkaTV Legacy</strong></li>
+          <li>Нажмите <strong>Install</strong></li>
+        </ol>
+      </div>
+
+      <h2>Возможности</h2>
+      <div class="features">
+        <div class="feature-card">
+          <h3>Удобный интерфейс</h3>
+          <p>Интуитивно понятная навигация, адаптированная специально для пульта Magic Remote.</p>
         </div>
+        <div class="feature-card">
+          <h3>Высокое качество</h3>
+          <p>Поддержка различных форматов и разрешений видео для наилучшего опыта просмотра.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Огромная библиотека</h3>
+          <p>Доступ к огромному количеству фильмов, сериалов и мультфильмов прямо на вашем ТВ.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Безопасность</h3>
+          <p>Открытый исходный код, никакой рекламы и трекеров.</p>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>
+          <a href="https://github.com/atlet99/rezkatv-public">GitHub</a> &bull;
+          <a href="https://github.com/atlet99/rezkatv-public/releases">Releases</a> &bull;
+          <a href="https://github.com/atlet99/rezkatv-public/issues">Issues</a>
+        </p>
+        <p>&copy; 2024-2026 RezkaTV Project. Разработано для LG webOS.</p>
+      </div>
     </div>
-</body>
+  </body>
 </html>

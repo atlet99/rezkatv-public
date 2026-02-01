@@ -1,16 +1,16 @@
 {
   "paging": {
     "page": 1,
-    "count": 1,
+    "count": 2,
     "maxPage": 1,
-    "itemsTotal": 1
+    "itemsTotal": 2
   },
   "packages": [
     {
       "id": "com.rezkatv.app",
       "title": "RezkaTV",
       "iconUri": "https://github.com/atlet99/rezkatv-public/raw/main/webos/largeIcon.png",
-      "description": "RezkaTV - медиа-клиент для потокового воспроизведения контента на телевизорах LG webOS. Приложение предоставляет удобный интерфейс для просмотра фильмов и сериалов с поддержкой различных форматов и качеств.",
+      "description": "RezkaTV - медиа-клиент для потокового воспроизведения контента на телевизорах LG webOS 5.x+ (2020+). Современная версия на Vue 3 с полным функционалом.",
       "category": "entertainment",
       "categories": [
         "entertainment",
@@ -32,23 +32,71 @@
       ],
       "manifest": {
         "id": "com.rezkatv.app",
-        "version": "1.1.23",
+        "version": "1.1.24",
         "type": "web",
         "title": "RezkaTV",
-        "appDescription": "Media streaming client for LG webOS TV",
+        "appDescription": "Media streaming client for LG webOS TV (Modern - webOS 5.x+)",
         "iconUri": "https://github.com/atlet99/rezkatv-public/raw/main/webos/icon.png",
         "sourceUrl": "https://github.com/atlet99/rezkatv-public",
         "rootRequired": false,
-        "ipkUrl": "https://github.com/atlet99/rezkatv-public/releases/download/v1.1.23/com.rezkatv.app_1.1.23_all.ipk",
+        "ipkUrl": "https://github.com/atlet99/rezkatv-public/releases/download/v1.1.24/com.rezkatv.app_1.1.24_modern.ipk",
         "ipkHash": {
-          "sha256": "8eaef17412764b0678be970c4dfedfe9679b9234a8645368ae6e06db92f972f2"
+          "sha256": "5b83d3062ef32133141e4db8adcf7bbee51673f1ad61fa5f927c7d5f3480042a"
         },
-        "ipkSize": 8708434,
-        "minWebOSVersion": "3.0.0",
+        "ipkSize": 7263224,
+        "minWebOSVersion": "5.0.0",
         "maxWebOSVersion": "99.0.0"
       },
       "pool": "main",
-      "shortDescription": "Media streaming client",
+      "shortDescription": "Modern version for webOS 5.x+ (2020+)",
+      "fullDescriptionUrl": "https://github.com/atlet99/rezkatv-public/raw/main/webos/description.html",
+      "changelogUrl": "https://github.com/atlet99/rezkatv-public/releases",
+      "screenshots": []
+    },
+    {
+      "id": "com.rezkatv.app.legacy",
+      "title": "RezkaTV Legacy",
+      "iconUri": "https://github.com/atlet99/rezkatv-public/raw/main/webos/largeIcon.png",
+      "description": "RezkaTV Legacy - оптимизированная версия для старых телевизоров LG webOS 3.x-4.x (2016-2019). Легковесная версия на Vanilla JS с базовым функционалом.",
+      "category": "entertainment",
+      "categories": [
+        "entertainment",
+        "media",
+        "video"
+      ],
+      "author": "RezkaTV",
+      "vendor": "RezkaTV",
+      "license": "MIT",
+      "homepage": "https://github.com/atlet99/rezkatv-public",
+      "keywords": [
+        "rezka",
+        "streaming",
+        "media",
+        "video",
+        "movies",
+        "tv",
+        "webos",
+        "legacy"
+      ],
+      "manifest": {
+        "id": "com.rezkatv.app",
+        "version": "1.1.24",
+        "type": "web",
+        "title": "RezkaTV Legacy",
+        "appDescription": "Media streaming client for LG webOS TV (Legacy - webOS 3.x-4.x)",
+        "iconUri": "https://github.com/atlet99/rezkatv-public/raw/main/webos/icon.png",
+        "sourceUrl": "https://github.com/atlet99/rezkatv-public",
+        "rootRequired": false,
+        "ipkUrl": "https://github.com/atlet99/rezkatv-public/releases/download/v1.1.24/com.rezkatv.app_1.1.24_legacy.ipk",
+        "ipkHash": {
+          "sha256": "62f3df6a03b721d3db00998ec1164d4fabe7aa5ce090102e5bb968ca0f4be210"
+        },
+        "ipkSize": 4577968,
+        "minWebOSVersion": "3.0.0",
+        "maxWebOSVersion": "4.99.0"
+      },
+      "pool": "main",
+      "shortDescription": "Legacy version for webOS 3.x-4.x (2016-2019)",
       "fullDescriptionUrl": "https://github.com/atlet99/rezkatv-public/raw/main/webos/description.html",
       "changelogUrl": "https://github.com/atlet99/rezkatv-public/releases",
       "screenshots": []
