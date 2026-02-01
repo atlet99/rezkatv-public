@@ -39,7 +39,7 @@
         "iconUri": "https://github.com/atlet99/rezkatv-public/raw/main/webos/icon.png",
         "sourceUrl": "https://github.com/atlet99/rezkatv-public",
         "rootRequired": false,
-        "ipkUrl": "https://github.com/atlet99/rezkatv-public/releases/download/v1.1.24/com.rezkatv.app_1.1.24_modern.ipk",
+        "ipkUrl": "https://github.com/atlet99/rezkatv-public/releases/download/v1.1.24/com.rezkatv.app_1.1.24_all.ipk",
         "ipkHash": {
           "sha256": "5b83d3062ef32133141e4db8adcf7bbee51673f1ad61fa5f927c7d5f3480042a"
         },
