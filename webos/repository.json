@@ -32,18 +32,18 @@
       ],
       "manifest": {
         "id": "com.rezkatv.app",
-        "version": "1.1.24",
+        "version": "1.1.25",
         "type": "web",
         "title": "RezkaTV",
         "appDescription": "Media streaming client for LG webOS TV (Modern - webOS 5.x+)",
         "iconUri": "https://github.com/atlet99/rezkatv-public/raw/main/webos/icon.png",
         "sourceUrl": "https://github.com/atlet99/rezkatv-public",
         "rootRequired": false,
-        "ipkUrl": "https://github.com/atlet99/rezkatv-public/releases/download/v1.1.24/com.rezkatv.app_1.1.24_all.ipk",
+        "ipkUrl": "https://github.com/atlet99/rezkatv-public/releases/download/v1.1.25/com.rezkatv.app_1.1.25_all.ipk",
         "ipkHash": {
-          "sha256": "512c3327958ea2613ba44b738a5d51ad210e8d0309ed4184de47713b04511b30"
+          "sha256": "bf64fb7557cd57b110218772613fbf3dafd33f44614e5e60f7260c2b4a11c6ef"
         },
-        "ipkSize": 7260948,
+        "ipkSize": 7267126,
         "minWebOSVersion": "5.0.0",
         "maxWebOSVersion": "99.0.0"
       },
@@ -80,18 +80,18 @@
       ],
       "manifest": {
         "id": "com.rezkatv.app",
-        "version": "1.1.24",
+        "version": "1.1.25",
         "type": "web",
         "title": "RezkaTV Legacy",
         "appDescription": "Media streaming client for LG webOS TV (Legacy - webOS 3.x-4.x)",
         "iconUri": "https://github.com/atlet99/rezkatv-public/raw/main/webos/icon.png",
         "sourceUrl": "https://github.com/atlet99/rezkatv-public",
         "rootRequired": false,
-        "ipkUrl": "https://github.com/atlet99/rezkatv-public/releases/download/v1.1.24/com.rezkatv.app_1.1.24_all_legacy.ipk",
+        "ipkUrl": "https://github.com/atlet99/rezkatv-public/releases/download/v1.1.25/com.rezkatv.app_1.1.25_all_legacy.ipk",
         "ipkHash": {
-          "sha256": "5bae84e74b3df3c2e6b8267d58279ada6cc342946f2749ddb19b8a02af2ab7c4"
+          "sha256": "0277f88f570e9954f89716db983fa202e81e3690bd7d59c626bde988a68bb604"
         },
-        "ipkSize": 4574738,
+        "ipkSize": 4588122,
         "minWebOSVersion": "3.0.0",
         "maxWebOSVersion": "4.99.0"
       },
