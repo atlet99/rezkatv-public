@@ -47,4 +47,4 @@ if (typeof window !== 'undefined' && typeof window.ResizeObserver === 'undefined
   window.ResizeObserver = ResizeObserverPolyfill
 }
 
-export {}
+// Note: No export - this file is loaded as a classic script, not an ES module

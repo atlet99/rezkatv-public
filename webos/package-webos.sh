@@ -35,7 +35,7 @@ else
     SOURCE_DIR="dist"
     IPK_SUFFIX=""
     APP_TITLE="RezkaTV"
-    echo "Target: webOS 5.x+ (Chrome 68+)"
+    echo "Target: webOS 4.x+ (Chrome 53+)"
 fi
 
 echo ""
@@ -142,6 +142,15 @@ echo "🔧 Step 6: Updating appinfo.json..."
 # Get version from package.json
 VERSION=$(node -p "require('./package.json').version")
 
+# Use different appinfo for different builds
+if [ "$BUILD_TYPE" = "legacy" ] && [ -f "webos/appinfo-legacy.json" ]; then
+    echo "   📋 Using appinfo-legacy.json for webOS 3.x-4.x compatibility"
+    cp webos/appinfo-legacy.json webos/appinfo.json
+elif [ "$BUILD_TYPE" = "modern" ] && [ -f "webos/appinfo-modern.json" ]; then
+    echo "   📋 Using appinfo-modern.json for webOS 5+"
+    cp webos/appinfo-modern.json webos/appinfo.json
+fi
+
 # Update appinfo.json version and title
 if [ -f "webos/appinfo.json" ]; then
     if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -162,6 +171,9 @@ if npx ares-package --version &> /dev/null; then
     # Create package
     # Check if service directory exists
     if [ -d "service" ]; then
+        # ALWAYS use the unified service (ES5 compatible with Node.js v0.12.2)
+        # We have replaced the ES6 service with the legacy one in the source tree.
+        echo "   📋 Packaging service..."
         npx ares-package webos service --outdir ./ --no-minify
     else
         npx ares-package webos --outdir ./ --no-minify
